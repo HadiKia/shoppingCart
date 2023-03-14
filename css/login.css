@@ -1,0 +1,70 @@
+.login-container{
+     font-size: .9rem;
+     top: -10000px;
+     padding: 1em;
+}
+.login-container.open{
+     top: -107.7px;
+}
+.inputs{
+     padding: .6em;
+     border: 1px solid var(--pColor);
+     border-radius: 1em;
+     display: flex;
+     align-items: center;
+     gap: .5em;
+     background-color: #f5f5f5;
+}
+.inputs input{
+     background-color: transparent;
+     width: 100%;
+}
+.login-button{
+     width: 100%;
+     cursor: pointer;
+     padding: .85em;
+     background-color: #aab4c7;
+     border-radius: 1em;
+}
+.logged-items{
+     display: flex;
+     align-items: center;
+     gap: 1em;
+}
+.logged-items span{
+     padding: .3em;
+     background-color: #131313;
+     color: #aab4c7;
+     border-radius: .3em;
+     user-select: none;
+}
+.logged-items i{
+     font-size: 1.4rem;
+}
+.logged-buttons{
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     gap: .5em;
+}
+.logged-buttons button{
+     cursor: pointer;
+     padding:.5em 1em;
+     border-radius: .5em;
+}
+.aside-container.logged{
+     gap: 1.5em;
+}
+.changePass-button{
+     background-color: #aaaac7;
+}
+.logout-button{
+     border:1px solid #131313;
+     color: #131313;
+     background-color: transparent;
+}
+@media screen and (min-width : 1000px) {
+     .login-container.open.open{
+          top: -13px;
+     }
+}
