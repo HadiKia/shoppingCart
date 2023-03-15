@@ -2,13 +2,17 @@
      display: flex;
      flex-direction: column;
      background-color: #fff;
-     padding: .5em;
+     padding: .5em .25em;
      align-items: center;
      justify-content: space-between;
      gap: 1em;
-     border-radius: .5em;
+     border-radius: 1em;
 }
 .product-img{
+     width: 100%;
+     padding: .5em;
+}
+.product-img img{
      width: 100%;
 }
 .product-title{cursor: pointer;}

@@ -144,7 +144,7 @@
           "price" : 60,
           "category" : "boots",
           "description" : "These Forever Comfort® Chelsea boots are styled in a sleek slip-on style, with elasticated panels at the sides and padding inside for a comfortable all-day wear.",
-          "image" : "products/20.jpg"
+          "image" : "products/20.JPG"
      },
      {    "id" : 21,
           "title" : "Black Forever Comfort Buckle Chelsea Boots",
@@ -158,77 +158,77 @@
           "price" : 61,
           "category" : "boots",
           "description" : "Add to Favourites The rider-style boot is a must-have for the season ahead. Featuring a buckle detail at the top of the calf and a full inner zip making them easy to slip on and off.",
-          "image" : "products/22.jpg"
+          "image" : "products/22.JPG"
      },
      {    "id" : 23,
           "title" : "Friends Like These Block Heeled Slouch Ankle Boot",
           "price" : 40,
           "category" : "boots",
           "description" : "Block heeled slouch ankle boot. Approx 3 inches Upper 100% Textile, Lining. and Sock 80% Textile, 20% Other materials. Sole 100% Other materials.",
-          "image" : "products/23.jpg"
+          "image" : "products/23.JPG"
      },
      {    "id" : 24,
           "title" : "Forever Comfort® Leather Lace-Up Boots",
           "price" : 70,
           "category" : "boots",
           "description" : "Every wardrobe needs a pair of black lace-up boots this season, style yours with a midi dress, jeans or even utility-inspired joggers. With chunky cleated soles and a zip on the inner to make it easy when slipping these boots on and off.",
-          "image" : "products/24.jpg"
+          "image" : "products/24.JPG"
      },
      {    "id" : 25,
           "title" : "Nice Black Boot",
           "price" : 66,
           "category" : "boots",
           "description" : "",
-          "image" : "products/25.jpg"
+          "image" : "products/25.JPG"
      },
      {    "id" : 26,
           "title" : "River Island Black 2214 Sml Embossed Backpack",
           "price" : 40,
           "category" : "purses",
           "description" : "",
-          "image" : "products/26.jpg"
+          "image" : "products/26.JPG"
      },
      {    "id" : 27,
           "title" : "Leather Cross-Body Messenger Bag",
           "price" : 40,
           "category" : "purses",
           "description" : "This smart leather messenger bag features a front flap pocket and internal zip compartment. Available in other colours.",
-          "image" : "products/27.jpg"
+          "image" : "products/27.JPG"
      },
      {    "id" : 28,
           "title" : "Dune London Black Kade Crossbody Phone Purse",
           "price" : 56,
           "category" : "purses",
           "description" : "Keep your phone safe with Dune London's stylish Kade cross-body purse. Although compact, it still has plenty of room for your gadget and cards. Topped with a chain shoulder strap, it's finished with a small logo plaque.",
-          "image" : "products/28.jpg"
+          "image" : "products/28.JPG"
      },
      {    "id" : 29,
           "title" : "Leather Cross-Body Bag",
           "price" : 28,
           "category" : "purses",
           "description" : "Stylish, simple and chic leather across-body bag with slip pocket and zip compartment. Perfect for everyday use. Available in other colours.",
-          "image" : "products/29.jpg"
+          "image" : "products/29.JPG"
      },     
      {    "id" : 30,
           "title" : "River Island Brown Pinched Monogram Shopper Bag",
           "price" : 53,
           "category" : "purses",
           "description" : "",
-          "image" : "products/30.jpg"
+          "image" : "products/30.JPG"
      },     
      {    "id" : 31,
           "title" : "Leather Studded Flap Across-Body Bag",
           "price" : 43,
           "category" : "purses",
           "description" : "",
-          "image" : "products/31.jpg"
+          "image" : "products/31.JPG"
      },     
      {    "id" : 32,
           "title" : "Ted Baker Nikicon Knot Bow Small Icon Bag",
           "price" : 39,
           "category" : "purses",
           "description" : "Your stuff deserves to be carried in something cute. Meet NIKICON: made from a glossy patent PU fabric, its classic and compact shape is given a pretty update with a knotted bow embellishment",
-          "image" : "products/32.jpg"
+          "image" : "products/32.JPG"
      },
      {    "id" : 33,
           "title" : "Girl In Mind Short Sleeve Wrap Dress",
@@ -256,69 +256,69 @@
           "price" : 46,
           "category" : "dresses",
           "description" : "This abstract print midi dress with zip neck will bring a contemporary feel to your Autumn/Winter wardrobe. Add your favourite pair of black boots to complete the look",
-          "image" : "products/36.jpg"
+          "image" : "products/36.JPG"
      },
      {    "id" : 37,
           "title" : "Lipsy Knot Front Midi Dress",
           "price" : 43,
           "category" : "dresses",
           "description" : "",
-          "image" : "products/37.jpg"
+          "image" : "products/37.JPG"
      },
      {    "id" : 38,
           "title" : "Short Sleeve Utility Dress",
           "price" : 29,
           "category" : "dresses",
           "description" : "Leopard print but different. This gorgeous button through shirt dress is sure to become a firm favourite with its oversized print and hardware style buttons. Perfect with boots.",
-          "image" : "products/38.jpg"
+          "image" : "products/38.JPG"
      },
      {    "id" : 39,
           "title" : "Maternity Denim Leggings",
           "price" : 50,
           "category" : "jeans",
           "description" : "",
-          "image" : "products/39.jpg"
+          "image" : "products/39.JPG"
      },
      {    "id" : 40,
           "title" : "Lift, Slim And Shape Boot Cut Jeans",
           "price" : 43,
           "category" : "jeans",
           "description" : "Cleverly designed jeans with hidden support providing extra waist smoothing. With a curved gap free waistband to support and slim and a high rise waist for a flattering fit. Featuring ecomade fibres",
-          "image" : "products/40.jpg"
+          "image" : "products/40.JPG"
      },
      {    "id" : 41,
           "title" : "Lift, Slim And Shape Skinny Jeans",
           "price" : 43,
           "category" : "jeans",
           "description" : "Add to Favourites Made from a cotton-rich blend with extra stretch these skinny jeans have been designed with cleverly hidden support which sculpts your figure and a high waistband to contour your shape. ",
-          "image" : "products/41.jpg"
+          "image" : "products/41.JPG"
      },
      {    "id" : 42,
           "title" : "Cropped Lift, Slim And Shape Skinny Jeans",
           "price" : 37,
           "category" : "jeans",
           "description" : "Your favourite jean now in crop length. Designed for a high-rise waist for a flattering fit, the clever pattern and curved gap free waistband supports and slims.",
-          "image" : "products/42.jpg"
+          "image" : "products/42.JPG"
      },
      {    "id" : 43,
           "title" : "Lift, Slim And Shape Skinny Jeans",
           "price" : 43,
           "category" : "jeans",
           "description" : "Made from a cotton-rich blend with extra stretch these skinny jeans have been designed with cleverly hidden support which sculpts your figure and a high waistband to contour your shape",
-          "image" : "products/43.jpg"
+          "image" : "products/43.JPG"
      },
      {    "id" : 44,
           "title" : "Mom Jeans",
           "price" : 34,
           "category" : "jeans",
           "description" : "A classic style that can be dressed up or down, made from 100% cotton and styled in a loosely-fitted shape with a high-rise waist and rips at the knees.",
-          "image" : "products/44.jpg"
+          "image" : "products/44.JPG"
      },
      {    "id" : 45,
           "title" : "Lift, Slim & Shape Slim Jeans",
           "price" : 48,
           "category" : "jeans",
           "description" : "Made from a cotton-rich blend with extra stretch these slim jeans have been designed with cleverly hidden support which sculpts your figure and the high waistband contours your shape",
-          "image" : "products/45.jpg"
+          "image" : "products/45.JPG"
      }
 ]

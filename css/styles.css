@@ -62,3 +62,9 @@ aside{
           grid-template-columns: repeat(4,1fr);
      }
 }
+@media screen and (min-width : 1370px){
+     header{padding: 0;}
+     main{
+          grid-template-columns: repeat(5,1fr);
+     }
+}
