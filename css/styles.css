@@ -38,8 +38,8 @@ main{
      display: grid;
      justify-content: center;
      grid-template-columns: repeat(2,1fr);
-     gap: 2em;
-     padding: 1em;
+     gap: 2em 1em;
+     padding: 1em .5em;
      background-color: var(--gColor2);
      transition: .5s;
      font-size: .9rem;
@@ -54,17 +54,21 @@ aside{
 @media screen and (min-width : 768px){
      main{
           grid-template-columns: repeat(3,1fr);
+          gap: 2em 1.5em;
      }
 }
 @media screen and (min-width : 1000px){
      header{padding: 0;}
      main{
           grid-template-columns: repeat(4,1fr);
+          padding: 1em 2em;
+          gap: 2.5em 2em;
      }
 }
 @media screen and (min-width : 1370px){
      header{padding: 0;}
      main{
           grid-template-columns: repeat(5,1fr);
+          gap: 3em 2.5em;
      }
 }

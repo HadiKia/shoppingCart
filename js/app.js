@@ -3,10 +3,12 @@ import LimitText from './LimitText.js';
 // Dom
 const main = document.querySelector('main')
 const search = document.querySelector('.searchContainer input')
+const catItems = document.querySelectorAll('.category li')
 
 // EventListener
 document.addEventListener('DOMContentLoaded', getProducts)
 document.addEventListener('input', searchProducts)
+catItems.forEach(catItem => catItem.addEventListener('click', filterProducts));
 
 // functions
 async function getProducts() {
@@ -18,10 +20,11 @@ async function getProducts() {
 function createProduct(data) {
     if (data.length === 0) {
         main.innerHTML = `
-            <p>Sorry, there is'nt available product for you...</p>
+            <p style="padding: 0 .5em">Sorry, there is'nt available product for you...</p>
         `
         return
     }
+    main.innerHTML = ''
     data.forEach(product => {
         const productDiv = document.createElement('div')
         productDiv.classList.add('product')
@@ -50,6 +53,13 @@ async function searchProducts() {
     const result = await fetch("products/products.json")
     const data = await result.json()
     const productResults = data.filter((product) => product.title.toLowerCase().includes(search.value.toLowerCase()))
-    main.innerHTML = ''
+    createProduct(productResults)
+}
+
+async function filterProducts(event) {
+    let targetCat = event.target.nodeName === "IMG" ? event.target.alt : event.target.innerText
+    const result = await fetch("products/products.json")
+    const data = await result.json()
+    const productResults = data.filter((product) => product.category === targetCat.toLowerCase())
     createProduct(productResults)
 }
