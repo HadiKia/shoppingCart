@@ -1,74 +1,83 @@
-@import url('fonts.css');
-@import url('header.css');
-@import url('product.css');
-@import url('cart.css');
-@import url('login.css');
+@import url("fonts.css");
+@import url("header.css");
+@import url("product.css");
+@import url("cart.css");
+@import url("login.css");
 
-*{
-     margin: 0; padding: 0;
-     box-sizing: border-box;
-     font-family: 'Comfortaa';
-     outline: none; border: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Comfortaa";
+  outline: none;
+  border: none;
 }
-ul li {list-style: none;}
-img{
-     max-width: 100%;
-     border-radius: .5em;
-     -webkit-user-drag: none;
-     user-select: none;
-     -moz-user-select: none;
-     -webkit-user-select: none;
-     -ms-user-select: none;
+ul li {
+  list-style: none;
+}
+img {
+  max-width: 100%;
+  border-radius: 0.5em;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 /* Colors */
-:root{
-     --pColor : #aaaac7;
-     --gColor : #e6e6e6;
-     --gColor2 : #bebebe;
-     --bColor : #131313;
+:root {
+  --pColor: #aaaac7;
+  --gColor: #e6e6e6;
+  --gColor2: #bebebe;
+  --bColor: #131313;
 }
-header{
-     padding: .5em;
-     display: flex;
-     flex-direction: column;
-     align-items: center;
+header {
+  padding: 0.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-main{
-     display: grid;
-     justify-content: center;
-     grid-template-columns: repeat(2,1fr);
-     gap: 2em 1em;
-     padding: 1em .5em;
-     background-color: var(--gColor2);
-     transition: .5s;
-     font-size: .9rem;
+main {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2em 1em;
+  padding: 1em 0.5em;
+  background-color: var(--gColor2);
+  transition: 0.3s;
+  font-size: 0.9rem;
 }
-main.open-cart,main.open-login{
-     filter: brightness(60%) blur(3px);
+main.open-cart,
+main.open-login {
+  filter: brightness(60%) blur(3px);
 }
-aside{
-     width: 100%;
-     position: relative;
+aside {
+  width: 100%;
+  position: relative;
 }
-@media screen and (min-width : 768px){
-     main{
-          grid-template-columns: repeat(3,1fr);
-          gap: 2em 1.5em;
-     }
+@media screen and (min-width: 768px) {
+  main {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em 1.5em;
+  }
 }
-@media screen and (min-width : 1000px){
-     header{padding: 0;}
-     main{
-          grid-template-columns: repeat(4,1fr);
-          padding: 1em 2em;
-          gap: 2.5em 2em;
-     }
+@media screen and (min-width: 1000px) {
+  header {
+    padding: 0;
+  }
+  main {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 1em 2em;
+    gap: 2.5em 2em;
+  }
 }
-@media screen and (min-width : 1370px){
-     header{padding: 0;}
-     main{
-          grid-template-columns: repeat(5,1fr);
-          gap: 3em 2.5em;
-     }
+@media screen and (min-width: 1370px) {
+  header {
+    padding: 0;
+  }
+  main {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 3em 2.5em;
+  }
 }

@@ -4,7 +4,7 @@ function LimitText(data, limited) {
       data.length = limited;
       data.push("...");
     }
-    return data.join(" ");
+    return data.join("");
   }
 
   export default LimitText

@@ -13,6 +13,7 @@
      border:1px solid var(--pColor);
      z-index: 4;
 }
+
 .product-cart-container.open{
      top: -107.7px;
 }
@@ -43,7 +44,9 @@
      background-color: #aab4c7;
 }
 .product-cart-img{
-     width: 40px;
+     width: 60px;
+     padding-left: .5em;
+     border-radius: .2em;
 }
 .product-cart-detail{
      flex-direction: column;
@@ -77,10 +80,6 @@
      color: #e6e6e6;
 }
 .clearButton{
-     background-color: #696969;
-     cursor: pointer;
-}
-.cart-footer button:last-child{
      background-color: #131313;
      cursor: pointer;
 }
