@@ -9,8 +9,13 @@ const cartMain = document.querySelector(".cart-main");
 const cartButton = document.querySelector(".cartContainer");
 const productCartContainer = document.querySelector(".product-cart-container");
 const menu = document.querySelector(".menu");
-const totalPrice = document.querySelector('.totalPrice')
-const clearButton = document.querySelector('.clearButton')
+const totalPrice = document.querySelector(".totalPrice");
+const clearButton = document.querySelector(".clearButton");
+const user = document.querySelector(".user-icon");
+const loginContainer = document.querySelector(".login-container");
+const loginButton = document.querySelector(".login-button");
+const errorMessage = document.querySelector(".errorMessage");
+const warningMessage = document.querySelector(".warningMessage");
 
 // EventListener
 document.addEventListener("DOMContentLoaded", getProducts);
@@ -19,10 +24,18 @@ catItems.forEach((catItem) => {
   catItem.addEventListener("click", filterProducts);
 });
 cartButton.addEventListener("click", openCartMenu);
-clearButton.addEventListener('click',clearCart)
+clearButton.addEventListener("click", clearCart);
+user.addEventListener("click", openUserMenu);
+loginButton.addEventListener("click", login);
 
 // functions
 async function getProducts() {
+  const userData =
+    localStorage.getItem("user") &&
+    JSON.parse(localStorage.getItem("user")).isLogged === true
+      ? JSON.parse(localStorage.getItem("user"))
+      : "";
+  loggedUser(userData);
   const result = await fetch("products/products.json");
   const data = await result.json();
   createProduct(data);
@@ -95,6 +108,7 @@ function productButtons(event) {
     case "addto-description":
       break;
     case "addto-favorite":
+      event.target.classList.toggle("fa-solid");
       break;
     default:
       break;
@@ -127,42 +141,156 @@ async function addToCartButton(productId) {
 </div>
   `;
   cartMain.appendChild(productCartDiv);
-  const productPrice = productTargeted.price
-  totalPrice.innerHTML = +totalPrice.innerHTML + productPrice
-  numberOfProduct(productCartDiv,productPrice);
+  const productPrice = productTargeted.price;
+  totalPrice.innerHTML = +totalPrice.innerHTML + productPrice;
+  numberOfProduct(productCartDiv, productPrice);
 }
 
 function openCartMenu() {
   productCartContainer.classList.toggle("open");
   menu.classList.toggle("open-cart");
   main.classList.toggle("open-cart");
+
+  loginContainer.classList.remove("open");
+  menu.classList.remove("open-login");
+  main.classList.remove("open-login");
 }
 
 // This function changes the product number and also deletes the product
-function numberOfProduct(item,itemPrice) {
+function numberOfProduct(item, itemPrice) {
   // increase number
   const chevronUp = item.childNodes[5].childNodes[1].childNodes[1];
   chevronUp.addEventListener("click", () => {
-    item.childNodes[5].childNodes[1].childNodes[3].innerHTML = +item.childNodes[5].childNodes[1].childNodes[3].innerHTML + 1;
-    totalPrice.innerHTML = +totalPrice.innerHTML + itemPrice
+    item.childNodes[5].childNodes[1].childNodes[3].innerHTML =
+      +item.childNodes[5].childNodes[1].childNodes[3].innerHTML + 1;
+    totalPrice.innerHTML = +totalPrice.innerHTML + itemPrice;
   });
   // dicrease number
   const chevronDown = item.childNodes[5].childNodes[1].childNodes[5];
   chevronDown.addEventListener("click", () => {
-    item.childNodes[5].childNodes[1].childNodes[3].innerHTML === "1" ? (item.remove(), cartCounter.innerHTML = +cartCounter.innerHTML - 1) : (item.childNodes[5].childNodes[1].childNodes[3].innerHTML = +item.childNodes[5].childNodes[1].childNodes[3].innerHTML - 1);
-    totalPrice.innerHTML = +totalPrice.innerHTML - itemPrice
+    item.childNodes[5].childNodes[1].childNodes[3].innerHTML === "1"
+      ? (item.remove(), (cartCounter.innerHTML = +cartCounter.innerHTML - 1))
+      : (item.childNodes[5].childNodes[1].childNodes[3].innerHTML =
+          +item.childNodes[5].childNodes[1].childNodes[3].innerHTML - 1);
+    totalPrice.innerHTML = +totalPrice.innerHTML - itemPrice;
   });
   //  delete item
   const trash = item.childNodes[5].childNodes[3];
   trash.addEventListener("click", () => {
     item.remove();
-    totalPrice.innerHTML = +totalPrice.innerHTML - itemPrice * +item.childNodes[5].childNodes[1].childNodes[3].innerHTML
-    cartCounter.innerHTML = +cartCounter.innerHTML - 1
+    totalPrice.innerHTML =
+      +totalPrice.innerHTML -
+      itemPrice * +item.childNodes[5].childNodes[1].childNodes[3].innerHTML;
+    cartCounter.innerHTML = +cartCounter.innerHTML - 1;
   });
 }
 
-function clearCart(){
-  cartMain.innerHTML = ""
-  totalPrice.innerHTML = "0"
-  cartCounter.innerHTML = "0"
+function clearCart() {
+  cartMain.innerHTML = "";
+  totalPrice.innerHTML = "0";
+  cartCounter.innerHTML = "0";
+}
+
+function openUserMenu() {
+  loginContainer.classList.toggle("open");
+  menu.classList.toggle("open-login");
+  main.classList.toggle("open-login");
+
+  productCartContainer.classList.remove("open");
+  menu.classList.remove("open-cart");
+  main.classList.remove("open-cart");
+}
+
+async function login() {
+  const username = document.querySelector(".username").value;
+  const password = document.querySelector(".password").value;
+
+  if (username === "") {
+    warningMessage.style.display = "block";
+    return;
+  } else if (password === "") {
+    warningMessage.style.display = "block";
+    return;
+  }
+  warningMessage.style.display = "none";
+  loginButton.value = "Logging . . .";
+
+  const req = await fetch("https://fakestoreapi.com/auth/login", {
+    method: "POST",
+    body: JSON.stringify({ username, password }),
+    headers: { "Content-Type": "Application/json" },
+  });
+  const res = req.json();
+  res
+    .then((userData) => {
+      localStorage.setItem(
+        "user",
+        JSON.stringify({
+          isLogged: true,
+          username,
+          token: userData.token,
+          loginTime: [
+            new Date().toLocaleDateString(),
+            new Date().toLocaleTimeString(),
+          ],
+        })
+      );
+      loggedUser(JSON.parse(localStorage.getItem("user")));
+      loginContainer.classList.toggle("open");
+      menu.classList.toggle("open-login");
+      main.classList.toggle("open-login");
+    })
+    .catch(
+      (errorMessage.style.display = "block"),
+      (loginButton.value = "Login")
+    );
+}
+
+function loggedUser(userData) {
+  if (!userData) return;
+  loginContainer.classList.add("logged");
+  user.classList.remove("fa-user-vneck");
+  user.classList.add("fa-user-check");
+
+  loginContainer.innerHTML = `
+  <div class="logged-items">
+      <i class="fal fa-circle-user"></i>
+      <p>Hey <span>${userData.username}</span> , welcome!</p>
+  </div>
+  <div class="logged-items">
+      <i class="fal fa-clock"></i>
+      <p>Login Time: <span>${userData.loginTime[0]} , ${userData.loginTime[1]}</span></p>
+  </div>
+  <div class="logged-button">
+      <button class="logout-button">Logout</button>
+  </div>
+  `;
+  document.querySelector(".logout-button").addEventListener("click", logout);
+}
+
+function logout() {
+  document.querySelector(".logout-button").innerHTML = "Logging Out ...";
+
+  setInterval(() => {
+    loginContainer.classList.remove("logged");
+    user.classList.add("fa-user-vneck");
+    user.classList.remove("user-check");
+
+    loginContainer.innerHTML = `
+      <div class="inputs">
+          <i class="fa-light fa-user"></i>
+          <input type="text" placeholder="Username" class="username" />
+      </div>
+      <div class="inputs">
+          <i class="fa-light fa-lock-keyhole"></i>
+         <input type="password" placeholder="Password" class="password" />
+      </div>
+      <input type="button" value="Login" class="login-button" />
+    `;
+  }, 1000);
+
+  const userData = JSON.parse(localStorage.getItem("user"));
+  userData.token = "";
+  userData.isLogged = false;
+  localStorage.setItem("user", JSON.stringify(userData));
 }

@@ -108,6 +108,7 @@ nav {
   }
   .menu {
     font-size: 1.3rem;
+    width: 395px;
   }
   .searchContainer {
     border-right: 1px solid var(--pColor);

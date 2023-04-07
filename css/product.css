@@ -41,6 +41,7 @@
      cursor: pointer;
      color: var(--bColor);
      background: none;
+     transition:  all .3s ease-in-out;
 }
 
 @media screen and (min-width : 1370px) {
