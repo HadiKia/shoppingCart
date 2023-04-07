@@ -7,6 +7,8 @@
      justify-content: space-between;
      gap: 1em;
      border-radius: .9em;
+     position: relative;
+     overflow: hidden;
 }
 
 .product-img {
@@ -16,6 +18,28 @@
 
 .product-img img {
      width: 100%;
+     transition:  all .5s ease-in-out;
+}
+
+.hide {
+     opacity: 0.1;
+}
+
+.product-description{
+     color: var(--bColor);
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     padding: 1.5em;
+     font-size: .7rem;
+     line-height: 1.5em;
+     opacity: 0;
+     transition:  all .5s ease-in-out;
+}
+
+.show{
+     opacity: 1;
 }
 
 .product-title {
@@ -42,6 +66,12 @@
      color: var(--bColor);
      background: none;
      transition:  all .3s ease-in-out;
+}
+
+@media screen and (min-width: 768px) {
+    .product-description{
+     font-size: 1rem;
+    }
 }
 
 @media screen and (min-width : 1370px) {

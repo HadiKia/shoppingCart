@@ -16,6 +16,7 @@ const loginContainer = document.querySelector(".login-container");
 const loginButton = document.querySelector(".login-button");
 const errorMessage = document.querySelector(".errorMessage");
 const warningMessage = document.querySelector(".warningMessage");
+const productImg = document.querySelector('.product-img')
 
 // EventListener
 document.addEventListener("DOMContentLoaded", getProducts);
@@ -55,6 +56,7 @@ function createProduct(data) {
     productDiv.innerHTML = `
          <div class="product-img">
                  <img src="${product.image}" alt="${product.title}">
+                 <p class="product-description">${product.description}</p>
          </div>
          <div class="product-details">
                  <p class="product-title" title="${product.title}">
@@ -106,6 +108,7 @@ function productButtons(event) {
       );
       break;
     case "addto-description":
+      description(event.target.parentNode.parentNode.getAttribute("data-id"),event.composedPath()[2].childNodes[1].childNodes[1])
       break;
     case "addto-favorite":
       event.target.classList.toggle("fa-solid");
@@ -293,4 +296,13 @@ function logout() {
   userData.token = "";
   userData.isLogged = false;
   localStorage.setItem("user", JSON.stringify(userData));
+}
+
+async function description(productId,image){
+  const result = await fetch("products/products.json");
+  const data = await result.json();
+  const productTargeted = data[+productId];
+  image.classList.toggle("hide")
+  const description = image.parentNode.childNodes[3]
+  description.classList.toggle("show")
 }
