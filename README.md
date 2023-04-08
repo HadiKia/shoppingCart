@@ -23,7 +23,7 @@
 - minus and plus quantity cart items
 - reset cart items
 - show total price
-- FakeSotreApi for login auth ( here )
+- FakeSotreApi for login auth ( <a target="_blank" href="https://fakestoreapi.com/users">here</a> )
 - create a product.json for get products
 
 ---
