@@ -70,7 +70,7 @@
 
 @media screen and (min-width: 768px) {
     .product-description{
-     font-size: 1rem;
+     font-size: .8rem;
     }
 }
 
@@ -79,4 +79,7 @@
      .product-price {
           font-size: 1.1rem;
      }
+     .product-description{
+          font-size: 1rem;
+         }
 }

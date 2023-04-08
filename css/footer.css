@@ -1,0 +1,42 @@
+footer div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0 0.5em;
+  padding: 1em 0.5em;
+  color: var(--bColor);
+  font-size: 0.9rem;
+}
+footer div:nth-child(2) {
+  gap: 0 0.6em;
+}
+footer div i {
+  color: var(--bColor);
+  font-size: 1.2rem;
+}
+@media screen and (min-width: 768px) {
+  footer div {
+    font-size: 1rem;
+  }
+  footer div:nth-child(2) {
+    gap: 0 0.7em;
+  }
+  footer div i {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 1000px) {
+  footer {
+    background-color: var(--gColor);
+  }
+  footer div {
+    padding: 1em 1.5em;
+    font-size: 1.1rem;
+  }
+  footer div:nth-child(2) {
+    gap: 0 1em;
+  }
+  footer div i {
+    font-size: 1.7rem;
+  }
+}
