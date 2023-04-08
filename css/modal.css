@@ -1,0 +1,72 @@
+.modal {
+  background-color: #131313b7;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em 0;
+}
+.modal-box {
+  background-color: #ffffff;
+  color: var(--bColor);
+  padding: 1.25em;
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em 0;
+}
+.modal-box-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em 0;
+}
+.modal-box-item ul {
+  font-size: 0.85rem;
+  padding: 0 1.2em;
+}
+.modal-box-item ul li {
+  list-style: disc;
+  padding: 0.3em 0;
+}
+.modal-box-item ul li a {
+  text-decoration: none;
+  color: #3168c2;
+}
+.modal-box button {
+  font-size: 1rem;
+  padding: 0.8em;
+  border-radius: 0.5em;
+  background-color: #aab4c7;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+.modal-box button:active {
+  transform: scale(0.9);
+}
+
+@media screen and (min-width: 768px) {
+  .modal-box {
+    padding: 1.5em;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .modal-box {
+    padding: 1.7em;
+    gap: 1.75em 0;
+  }
+  .modal-box-item h3 {
+    font-size: 1.2rem;
+  }
+  .modal-box-item ul {
+    font-size: 0.9rem;
+  }
+  .modal-box button {
+    font-size: 1.1rem;
+  }
+}

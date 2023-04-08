@@ -1,6 +1,7 @@
 import LimitText from "./LimitText.js";
 
 // Dom
+const body = document.querySelector("body");
 const main = document.querySelector("main");
 const search = document.querySelector(".searchContainer input");
 const catItems = document.querySelectorAll(".category li");
@@ -16,9 +17,9 @@ const loginContainer = document.querySelector(".login-container");
 const loginButton = document.querySelector(".login-button");
 const errorMessage = document.querySelector(".errorMessage");
 const warningMessage = document.querySelector(".warningMessage");
-const productImg = document.querySelector('.product-img')
 
 // EventListener
+document.addEventListener("DOMContentLoaded", modal);
 document.addEventListener("DOMContentLoaded", getProducts);
 search.addEventListener("input", searchProducts);
 catItems.forEach((catItem) => {
@@ -108,7 +109,7 @@ function productButtons(event) {
       );
       break;
     case "addto-description":
-      description(event.target.parentNode.parentNode.getAttribute("data-id"),event.composedPath()[2].childNodes[1].childNodes[1])
+      description(event.composedPath()[2].childNodes[1].childNodes[1]);
       break;
     case "addto-favorite":
       event.target.classList.toggle("fa-solid");
@@ -298,11 +299,50 @@ function logout() {
   localStorage.setItem("user", JSON.stringify(userData));
 }
 
-async function description(productId,image){
-  const result = await fetch("products/products.json");
-  const data = await result.json();
-  const productTargeted = data[+productId];
-  image.classList.toggle("hide")
-  const description = image.parentNode.childNodes[3]
-  description.classList.toggle("show")
+async function description(image) {
+  image.classList.toggle("hide");
+  const description = image.parentNode.childNodes[3];
+  description.classList.toggle("show");
+}
+
+function modal() {
+  const modalDiv = document.createElement("div");
+  modalDiv.className = "modal";
+  modalDiv.innerHTML = `
+  <div class="modal-box">
+
+  <div class="modal-box-item">
+  <h3>minimal shopping cart features</h3>
+  <ul>
+    <li>filter products</li>
+    <li>add and remove item from cart</li>
+    <li>minus and plus quantity cart items</li>
+    <li>reset cart items</li>
+    <li>show total price</li>
+    <li>FakeSotreApi for login auth ( <a target="_blank" href="https://fakestoreapi.com/users">here</a> )</li>
+    <li>create a product.json for get products</li>
+  </ul>
+  </div>
+
+  <div class="modal-box-item">
+  <h3>web development technologies</h3>
+  <ul>
+    <li>html,css</li>
+    <li>vanillaJS</li>
+  </ul>
+  </div>
+
+  <button>ok</button>
+  
+ </div>
+  `;
+  body.appendChild(modalDiv);
+  hideModal(modalDiv);
+}
+
+function hideModal(modalDiv) {
+  const okButton = modalDiv.childNodes[1].childNodes[5];
+  okButton.addEventListener("click", () => {
+    modalDiv.style.display = "none";
+  });
 }
