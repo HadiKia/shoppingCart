@@ -46,7 +46,7 @@ async function getProducts() {
 function createProduct(data) {
   if (data.length === 0) {
     main.innerHTML = `
-            <p style="padding: 0 .5em">Sorry, there is'nt available product for you...</p>
+            <p class="not-found-product">Sorry, there is'nt available product for you...</p>
         `;
     return;
   }
@@ -346,3 +346,12 @@ function hideModal(modalDiv) {
     modalDiv.style.display = "none";
   });
 }
+
+main.addEventListener('click', () => {
+  productCartContainer.classList.remove("open");
+  loginContainer.classList.remove("open");
+  menu.classList.remove("open-login");
+  main.classList.remove("open-login");
+  menu.classList.remove("open-cart");
+  main.classList.remove("open-cart");
+})
